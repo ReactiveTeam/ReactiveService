@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentScheduler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
@@ -20,6 +21,8 @@ namespace ReactiveService
                 new Service1()
             };
             ServiceBase.Run(ServicesToRun);
+
+            JobManager.Initialize(new SchedulerRegistry());
         }
     }
 }
